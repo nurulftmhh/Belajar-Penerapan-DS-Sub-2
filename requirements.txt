@@ -5,4 +5,3 @@ numpy
 joblib
 scikit-learn
 streamlit
-pickle
