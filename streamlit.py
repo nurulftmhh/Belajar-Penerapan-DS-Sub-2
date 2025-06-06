@@ -9,9 +9,9 @@ from sklearn.ensemble import RandomForestClassifier
 def load_model_and_scaler():
     try:
         # Load model dan scaler yang sudah disimpan
-        with open('rf_model.pkl', 'rb') as f:
+        with open('random_forest_model.pkl', 'rb') as f:
             model = pickle.load(f)
-        with open('scaler.pkl', 'rb') as f:
+        with open('standard_scaler.pkl', 'rb') as f:
             scaler = pickle.load(f)
         with open('label_encoder.pkl', 'rb') as f:
             le = pickle.load(f)
