@@ -9,12 +9,9 @@ from sklearn.ensemble import RandomForestClassifier
 def load_model_and_scaler():
     try:
         # Load model dan scaler yang sudah disimpan
-        with open('random_forest_model.pkl', 'rb') as f:
-            model = joblib.load().load(f)
-        with open('standard_scaler.pkl', 'rb') as f:
-            scaler = joblib.load().load(f)
-        with open('label_encoder.pkl', 'rb') as f:
-            le = joblib.load().load(f)
+        model = joblib.load('random_forest_model.pkl')
+        scaler = joblib.load('standard_scaler.pkl')
+        le = joblib.load('label_encoder.pkl')
         return model, scaler, le
     except FileNotFoundError:
         st.error("Model files not found. Please make sure are in the same directory.")
