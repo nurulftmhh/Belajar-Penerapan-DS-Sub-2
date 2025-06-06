@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import pickle
+import joblib
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.ensemble import RandomForestClassifier
 
@@ -10,11 +10,11 @@ def load_model_and_scaler():
     try:
         # Load model dan scaler yang sudah disimpan
         with open('random_forest_model.pkl', 'rb') as f:
-            model = pickle.load(f)
+            model = joblib.load().load(f)
         with open('standard_scaler.pkl', 'rb') as f:
-            scaler = pickle.load(f)
+            scaler = joblib.load().load(f)
         with open('label_encoder.pkl', 'rb') as f:
-            le = pickle.load(f)
+            le = joblib.load().load(f)
         return model, scaler, le
     except FileNotFoundError:
         st.error("Model files not found. Please make sure are in the same directory.")
